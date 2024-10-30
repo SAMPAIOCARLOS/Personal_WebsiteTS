@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+.color_blue {
+    color: #4036FF;
+}
+
+.container_main_center {
+    width: 90vw;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+
+:root {
+    --color--text: #ffffff;
+    --color--background: #1B1B1B;
+    --background--container: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    --color--shadow: rgba(255, 255, 255, 0.5);
+    --img--background: url('/src/assets/images/paper-cut-abstract-background-3d-clean-dark-carving-art-paper-craft-black-waves-minimalistic-modern-design-business-presentations.jpg');
+    --background--project: linear-gradient(135deg, #1B1B1B, #2D2D2D, #4A4A4A);
+
+}
+
+.theme_Light {
+    --color--text: #000000;
+    --color--background: aliceblue;
+    --background--container: linear-gradient(to top, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.322) 100%);
+    --color--shadow: rgba(0, 0, 0, 0.903);
+    --img--background: url('/src/assets/images/many-blank-business-cards\ 1.png');
+    --background--project: url('/src/assets//images/6a2089b7-1d18-45b5-9e6c-67295039764c.jpg');
+}
+
+
+@keyframes float{
+	0%,100%{
+		transform:translatey(0)
+	}
+	50%{
+		transform:translatey(-30px)
+	}
+}
+#container_icons_scroll {
+     animation: float 2s ease-in-out infinite;
+     margin-top: 40px;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+#hand {
+     animation: wave-animation 2s ease-in-out infinite;
+}
+
+.highlighted_html {
+    color: #E34F26 !important;
+}
+.highlighted_css {
+    color: #1098fa !important;
+}
+.highlighted_js {
+    color: #F7DF1E !important; 
+}
+.highlighted_vue {
+    color: #42B883 !important;
+}
+.highlighted_git {
+    color: #F05032 !important; 
+}
+.highlighted_github {
+    color: #181717 !important;
+}
