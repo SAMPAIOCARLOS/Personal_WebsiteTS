@@ -24,7 +24,7 @@ interface Data{
                 data_icons_socialHeader: [
                     { id: 1, path: 'https://www.linkedin.com/in/carlos-sampaio-a02651265/', name: 'logo-linkedin' },
                     { id: 2, path: 'https://github.com/SAMPAIOCARLOS', name: 'logo-github' },
-                    { id: 3, path: '#', name: 'mail-outline' }
+                    { id: 3, path: 'https://mail.google.com/mail/u/1/?pli=1#inbox', name: 'mail-outline' }
                 ],
                 array_names: ['Desenvolvedor front-end', 'Front-end developer', 'Desenvolvedor front-end', 'Front-end developer'],
                 typed: null
@@ -88,6 +88,8 @@ interface Data{
                     <img v-else src="/src/assets/images/icons_scroll_white.png" alt="">
                 </a>
             </aside>
+
+            
         </div>
     </header>
 </template>
