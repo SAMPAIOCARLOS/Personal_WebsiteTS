@@ -54,16 +54,27 @@ import TheFooter from './components/TheFooter.vue';
           localStorage.setItem('theme', 'dark');
         }
       }
+    },
+    computed: {
+      showHeaderAndMain() {
+        // Defina quais rotas devem esconder o TheHeader e TheMain.
+        // Por exemplo, se estiver na rota de detalhes, não mostrar o header/main.
+        const hideOnRoutes = ['Details']; // Nome da rota onde você não quer exibir os componentes
+        return !hideOnRoutes.includes(this.$route.name);
+      }
     }
   })
 </script>
 
 <template>
-  <TheHeader  @pass_eventToggle_theme="toggle_theme" :show_btn_theme="show_btn_theme" :show_logoNavBar="show_logoNavBar" :show_iconScroll="show_iconScroll"/>
+  <TheHeader v-if="showHeaderAndMain" @pass_eventToggle_theme="toggle_theme" :show_btn_theme="show_btn_theme" :show_logoNavBar="show_logoNavBar" :show_iconScroll="show_iconScroll"/>
 
-  <TheMain />
+  <TheMain v-if="showHeaderAndMain"/>
 
-  <TheFooter />
+  <TheFooter v-if="showHeaderAndMain"/>
+
+
+  <router-view></router-view>
 </template>
 
 <style scoped>

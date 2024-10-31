@@ -1,0 +1,91 @@
+Documentação do Vue Router
+Para usar o Vue Router, primeiramente, é necessário instalá-lo no projeto (caso não tenha feito isso antes). Em seguida, é recomendável criar o arquivo shims-vue.d.ts para que o TypeScript não tenha problemas com o caminho das importações dos arquivos. O código a seguir deve ser adicionado ao arquivo:
+
+typescript
+Copiar código
+declare module '*.vue' {
+    import { DefineComponent } from 'vue';
+    const component: DefineComponent<{}, {}, any>;
+    export default component;
+}
+Depois, crie uma pasta dentro de src chamada router e um arquivo index.ts para fazer a configuração básica do Vue Router:
+
+typescript
+Copiar código
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+
+import Details from '../views/Details.vue';
+
+const routes: RouteRecordRaw[] = [
+    // Aqui vamos definir nossas rotas
+
+    // Exemplo de configuração de rota
+    {
+        path: "/detalhes/:title",
+        name: 'Details',
+        component: Details,
+        props: true
+    },
+];
+
+const router = createRouter({
+    history: createWebHistory(), // Aqui estamos usando createWebHistory
+    routes
+});
+
+export default router;
+Configuração do App.vue
+No arquivo App.vue, adicione a seguinte linha para renderizar as páginas que serão puxadas do Vue Router:
+
+html
+Copiar código
+<router-view></router-view>
+Configuração do Componente para Navegação
+No componente que levará a uma nova página (por exemplo, uma página de contato), configure a navegação da seguinte forma. Quando um texto como "Contato" for clicado, chame a função router_details:
+
+html
+Copiar código
+<template>
+    <nav>
+        <a @click="router_details('Easybank')">Contato</a>
+    </nav>
+</template>
+
+<script>
+export default {
+    methods: {
+        router_details(title) {
+            if (title === 'Easybank') {
+                this.$router.push({ name: 'Details', params: { title } });
+            }
+        }
+    }
+}
+</script>
+Estrutura do Método de Navegação
+No método this.$router.push, você deve garantir que o nome corresponde ao que foi definido na configuração da rota.
+
+name: 'Details' - Este é o nome da rota que foi configurada.
+params: { title } - Este parâmetro deve corresponder ao que está no caminho da configuração da rota.
+Passando Valores com Query Params
+Se você quiser passar valores do componente que chama a rota para o componente que atende a rota, pode fazer isso usando query params. O código ficaria assim:
+
+javascript
+Copiar código
+this.$router.push({ 
+    name: 'Details',
+    params: { title },
+    query: { 
+        img_card: itemDataProject.path_img,
+        title: itemDataProject.title, 
+        description: itemDataProject.text
+    }
+});
+Conclusão
+Essa documentação fornece uma visão geral básica sobre como configurar e usar o Vue Router em um projeto Vue. A configuração correta do router, juntamente com a navegação entre componentes, é essencial para criar uma experiência de usuário fluida em aplicações web.
+
+Observações:
+Organização: Considere usar subtítulos para seções específicas para melhorar a organização.
+Exemplos: Os exemplos de código estão bem colocados. Você poderia adicionar mais exemplos se achar necessário.
+Revisão Gramatical: Fiz algumas correções gramaticais para melhorar a fluidez do texto.
+Clareza: A explicação sobre como passar parâmetros e query strings está clara. Apenas certifique-se de que as variáveis referenciadas (como itemDataProject) estejam definidas no contexto onde você as usa.

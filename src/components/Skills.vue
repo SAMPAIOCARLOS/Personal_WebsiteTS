@@ -101,6 +101,7 @@ export default defineComponent({
     background: var(--img--background);
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 
 }
 
