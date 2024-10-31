@@ -2,9 +2,18 @@
 import { defineComponent } from 'vue'
 import CardsProject from './CardsProject.vue'
 
+interface Data {
+    name_project: string;
+}
+
 export default defineComponent({
     name: 'Projects',
-    components: { CardsProject }
+    components: { CardsProject },
+    data(): Data {
+        return {
+            name_project: 'Projetos'
+        }
+    }
 })
 </script>
 
@@ -14,7 +23,9 @@ export default defineComponent({
 
             <div id="box_title_center">
                 <h1>
-                    <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>t</span><span>o</span><span>s</span>
+                    <span v-for="(letter, index) in name_project" :key="index">
+                        {{ letter }}
+                    </span>
                 </h1>
 
             </div>
@@ -33,6 +44,7 @@ export default defineComponent({
     background: var(--background--project);
     background-position: center;
     background-size: cover;
+    padding-bottom: 100px;
 }
 
 #box_title_center {
@@ -46,13 +58,17 @@ h1 {
     color: var(--color--text);
     padding: 0 40px;
     cursor: pointer;
+    display: flex;
 }
 span {
     transition: all 0.3s; 
+    display: block;
 }
 span:hover {
     color: #4036FF;
     text-shadow: 2px 2px 40px #4036ff85;
+    transform: translateY(-20px);
+    
 }
 
 #container_projects {
@@ -60,5 +76,15 @@ span:hover {
     margin-top: 40px;
     width: 100%;
     min-height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+@media(max-width: 1093px) {
+    #container_projects {
+        justify-content: center;
+    }
 }
 </style>

@@ -17,14 +17,15 @@ export default defineComponent({
     name: 'Skills',
     data(): Data {
         return {
-            namesSkilss: ['HTML', 'CSS', 'JAVASCRIPT', 'VUE.JS', 'GIT', 'GITHUB', 'SQL'],
+            namesSkilss: ['HTML', 'CSS', 'JAVASCRIPT', 'VUE.JS', 'GIT', 'GITHUB', 'FIGMA'],
             data_iconsSkills: [
                 { id: 1, nameIcon: 'logo-html5', name: 'HTML' },
                 { id: 2, nameIcon: 'logo-css3', name: 'CSS' },
                 { id: 3, nameIcon: 'logo-javascript', name: 'JAVASCRIPT' },
                 { id: 4, nameIcon: 'logo-vue', name: 'VUE' },
                 { id: 5, nameIcon: 'git-branch-outline', name: 'GIT' },
-                { id: 6, nameIcon: 'logo-github', name: 'GITHUB' }
+                { id: 6, nameIcon: 'logo-github', name: 'GITHUB' },
+                { id: 7, nameIcon: 'logo-figma', name: 'FIGMA' }
             ],
             highlightedIndex: null
         }
@@ -42,9 +43,10 @@ export default defineComponent({
                     case 0: return 'highlighted_html';
                     case 1: return 'highlighted_css';
                     case 2: return 'highlighted_js';
-                    case 3: return 'highlighted_vue'
-                    case 4: return 'highlighted_git'
-                    case 5: return 'highlighted_github'
+                    case 3: return 'highlighted_vue';
+                    case 4: return 'highlighted_git';
+                    case 5: return 'highlighted_github';
+                    case 6: return 'highlighted_figma';
                     default: return '';
                 }
             }
