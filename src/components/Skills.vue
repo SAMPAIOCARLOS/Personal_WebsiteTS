@@ -97,7 +97,7 @@ export default defineComponent({
 #container_skills {
     width: 100%;
     min-height: 100vh;
-    border: 3px solid red;
+    /* border: 3px solid red; */
     background: var(--img--background);
     background-position: center;
     background-size: cover;

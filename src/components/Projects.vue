@@ -44,6 +44,7 @@ export default defineComponent({
     background: var(--background--project);
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     padding-bottom: 100px;
 }
 
@@ -72,7 +73,7 @@ span:hover {
 }
 
 #container_projects {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin-top: 40px;
     width: 100%;
     min-height: 50vh;

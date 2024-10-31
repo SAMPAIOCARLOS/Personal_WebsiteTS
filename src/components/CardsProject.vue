@@ -131,8 +131,12 @@ ul {
 ion-icon {
     font-size: 2.5vw;
     /* color: #42B883; */
+    transition: all 0.3s;
+    cursor: pointer;
 }
-
+ion-icon:hover {
+    scale: 1.2;
+}
 @media(max-width: 1093px) {
     .cardProject {
         width: 70%;

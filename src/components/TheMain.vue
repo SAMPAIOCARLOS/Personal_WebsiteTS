@@ -21,6 +21,6 @@ export default defineComponent({
 main {
     width: 100vw;
     min-height: 100vh;
-    border: 4px solid red;
+    /* border: 4px solid red; */
 }
 </style>

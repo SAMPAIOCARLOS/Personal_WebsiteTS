@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue';
 import TheHeader from './components/TheHeader.vue';
 import TheMain from './components/TheMain.vue';
-
+import TheFooter from './components/TheFooter.vue';
 
   interface Data {
     BodyElement: HTMLElement | null;
@@ -14,7 +14,7 @@ import TheMain from './components/TheMain.vue';
 
   export default defineComponent({
     name: 'App',
-    components: { TheHeader, TheMain },
+    components: { TheHeader, TheMain, TheFooter },
     data(): Data {
       return {
         BodyElement: null,
@@ -62,6 +62,8 @@ import TheMain from './components/TheMain.vue';
   <TheHeader  @pass_eventToggle_theme="toggle_theme" :show_btn_theme="show_btn_theme" :show_logoNavBar="show_logoNavBar" :show_iconScroll="show_iconScroll"/>
 
   <TheMain />
+
+  <TheFooter />
 </template>
 
 <style scoped>
