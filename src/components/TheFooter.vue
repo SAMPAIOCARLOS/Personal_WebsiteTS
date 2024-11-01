@@ -63,7 +63,7 @@ export default defineComponent({
                         <li v-for="ObjTo_array in Arrays_obj" :key="ObjTo_array">
                             <h1>{{ ObjTo_array.title }}</h1>
                             <p v-for="arrayToObj in ObjTo_array.itensList" :key="arrayToObj">
-                                <a :href="arrayToObj.path" target="blank">{{ arrayToObj.name }}</a>
+                                <a :href="arrayToObj.path">{{ arrayToObj.name }}</a>
                             </p>
                         </li>
                     </ul>
@@ -87,7 +87,6 @@ footer {
     justify-content: space-between;
 }
 #box_logo {
-    /* border: 3px solid green; */
     width: 20%;
 }
 #box_logo > img {
@@ -101,17 +100,16 @@ footer {
 }
 
 #container_listsFooter {
-    /* border: 2px solid red; */
     width: 70%;
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 ul {
     list-style: none;
     display: flex;
-    /* border: 3px solid red; */
 }
 li {
     text-align: center;
@@ -120,5 +118,41 @@ li {
 a {
     color: var(--color--text);
     text-decoration: none;
+}
+
+@media(max-width: 1000px) {
+    #box_logo {
+        width: 30%;
+    }
+}
+@media(max-width: 820px) {
+    #container_content_footer {
+        flex-wrap: wrap;
+    }
+    #box_logo {
+        width: 100%;
+    }
+    #container_listsFooter {
+        width: 100%;
+    }
+}
+
+@media(max-width: 550px) {
+    #container_content_footer {
+        gap: 30px;
+    }
+    ul {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 320px) {
+    h1 {
+        font-size: 7vw;
+    }
+    p {
+        font-size: 4vw;
+    }
 }
 </style>

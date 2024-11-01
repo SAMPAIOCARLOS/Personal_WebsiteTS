@@ -31,13 +31,13 @@ export default defineComponent({
         }
     },
     methods: {
-        highlight(index) {
+        highlight(index: number) {
             this.highlightedIndex = index
         },
         removehighlight() {
             this.highlightedIndex = null
         },
-        getHighlightClass(index) {
+        getHighlightClass(index: number) {
             if (this.highlightedIndex === index) {
                 switch(index) {
                     case 0: return 'highlighted_html';
@@ -181,8 +181,11 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.4s;
 }
-
+#list_iconsTech > li:hover {
+    scale: 1.2;
+}
 .nameTech {
     font-size: 0.9rem;
 }
@@ -238,11 +241,27 @@ p {
 @media(max-width: 500px) {
 
     h1 {
-        font-size: 6vw;
+        font-size: 7vw;
+    }
+    h2 {
+        font-size: 5vw;
+    }
+    p {
+        font-size: 4vw;
     }
     #list_iconsTech > li {
         font-size: 9vw;
         width: 40%;
+    }
+    #list_namesSkills > li {
+        font-size: 3.5vw;
+    }
+}
+
+@media(max-width: 300px) {
+    #list_iconsTech > li {
+        font-size: 30vw;
+        width: 100%;
     }
 }
 </style>

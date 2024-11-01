@@ -157,6 +157,7 @@ h1 {
 }
 p {
     font-weight: 200;
+    /* border: 1px solid red; */
 }
 ul {
     list-style: none;
@@ -216,8 +217,33 @@ ion-icon:hover {
 }
 
 @media(max-width: 600px) {
+
     .cardProject {
         min-width: 100%;
     }
+    .textContent_cardProject {
+        padding: 0;
+    }
+}
+
+@media(max-width: 400px) {
+    .contaier_imgProject {
+        height: 10rem;
+    }
+}
+
+@media(max-width: 320px) {
+    h1 {
+        font-size: 7vw;
+    }
+    p {
+        font-size: 0.5rem;
+    }
+    .box_icon {
+        width: 30px;
+        height: 30px;
+    /* border: 1px solid red; */
+    }
+    
 }
 </style>

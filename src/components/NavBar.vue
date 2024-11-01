@@ -29,7 +29,7 @@ export default defineComponent({
                 {id: 1, text_content: 'Inicio', path: 'http://localhost:3000/#header', icon: 'home-outline'},
                 {id: 2, text_content: 'Habilidades', path: 'http://localhost:3000/#container_skills', icon: 'hammer-outline'},
                 {id: 3, text_content: 'Projetos', path: 'http://localhost:3000/#container_project', icon: 'bag-check-outline'},
-                {id: 4, text_content: 'Contato', path: '#', icon: 'call-outline'}
+                {id: 4, text_content: 'Contato', path: '', icon: 'call-outline'}
             ],
             show_listFull: false,
             
@@ -193,4 +193,11 @@ nav {
         min-width: 10rem;
     }
 }
+
+@media(max-width: 250px) {
+    #container_logo {
+        min-width: 7rem;
+    }
+}
+
 </style>

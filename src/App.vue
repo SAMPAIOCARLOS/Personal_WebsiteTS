@@ -59,7 +59,7 @@ import TheFooter from './components/TheFooter.vue';
       showHeaderAndMain() {
         // Defina quais rotas devem esconder o TheHeader e TheMain.
         // Por exemplo, se estiver na rota de detalhes, não mostrar o header/main.
-        const hideOnRoutes = ['Details']; // Nome da rota onde você não quer exibir os componentes
+        const hideOnRoutes = ['Details', 'Contact']; // Nome da rota onde você não quer exibir os componentes
         return !hideOnRoutes.includes(this.$route.name);
       }
     }
@@ -71,8 +71,7 @@ import TheFooter from './components/TheFooter.vue';
 
   <TheMain v-if="showHeaderAndMain"/>
 
-  <!-- <TheFooter v-if="showHeaderAndMain"/> -->
-
+  <TheFooter v-if="showHeaderAndMain"/>
 
   <router-view 
   @pass_eventToggle_theme="toggle_theme"

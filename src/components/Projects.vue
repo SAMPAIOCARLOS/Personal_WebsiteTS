@@ -88,4 +88,16 @@ span:hover {
         justify-content: center;
     }
 }
+
+@media(max-width: 600px) {
+    h1 {
+        font-size: 9vw;
+    }
+}
+
+@media(max-width: 300px) {
+    h1 {
+        font-size: 12vw;
+    }
+}
 </style>
