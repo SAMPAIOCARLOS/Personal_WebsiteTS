@@ -111,6 +111,7 @@ export default defineComponent({
     /* border: 2px solid blue; */
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #container_textContent_skills {
@@ -131,7 +132,7 @@ h2 {
 
 p {
     color: var(--color--text);
-    font-size: 1.4rem;
+    font-size: 1.4vw;
 }
 #list_namesSkills {
     width: 100%;
@@ -186,4 +187,62 @@ p {
     font-size: 0.9rem;
 }
 
+@media(max-width: 1130px) {
+    #container_group_content_skills {
+        justify-content: space-between;
+    }
+}
+@media(max-width: 1050px) {
+    #container_textContent_skills {
+        width: 100%;
+        padding: 50px 0;
+    }
+
+    h1 {
+        font-size: 5ex;
+    }
+    h2 {
+        font-size: 4vw;
+    }
+
+    p {
+        font-size: 2.5vw;
+    }
+    #list_namesSkills > li {
+        font-size: 2.5vw;
+    }
+
+    #container_icons_tech {
+        width: 100%;
+    }
+    #list_iconsTech {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #list_iconsTech > li {
+        font-size: 6vw;
+    }
+    .nameTech {
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width: 800px) {
+    #list_iconsTech {
+        justify-content: left;
+    }
+}
+
+@media(max-width: 500px) {
+
+    h1 {
+        font-size: 6vw;
+    }
+    #list_iconsTech > li {
+        font-size: 9vw;
+        width: 40%;
+    }
+}
 </style>

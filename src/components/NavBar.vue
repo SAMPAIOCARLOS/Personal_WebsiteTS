@@ -26,9 +26,9 @@ export default defineComponent({
     data(): Data {
         return {
             data_path_NavBar: [
-                {id: 1, text_content: 'Inicio', path: '#header', icon: 'home-outline'},
-                {id: 2, text_content: 'Habilidades', path: '#container_skills', icon: 'hammer-outline'},
-                {id: 3, text_content: 'Projetos', path: '#container_project', icon: 'bag-check-outline'},
+                {id: 1, text_content: 'Inicio', path: 'http://localhost:3000/#header', icon: 'home-outline'},
+                {id: 2, text_content: 'Habilidades', path: 'http://localhost:3000/#container_skills', icon: 'hammer-outline'},
+                {id: 3, text_content: 'Projetos', path: 'http://localhost:3000/#container_project', icon: 'bag-check-outline'},
                 {id: 4, text_content: 'Contato', path: '#', icon: 'call-outline'}
             ],
             show_listFull: false,

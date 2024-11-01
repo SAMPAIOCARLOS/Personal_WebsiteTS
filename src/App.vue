@@ -71,10 +71,16 @@ import TheFooter from './components/TheFooter.vue';
 
   <TheMain v-if="showHeaderAndMain"/>
 
-  <TheFooter v-if="showHeaderAndMain"/>
+  <!-- <TheFooter v-if="showHeaderAndMain"/> -->
 
 
-  <router-view></router-view>
+  <router-view 
+  @pass_eventToggle_theme="toggle_theme"
+  :show_btn_theme="show_btn_theme"
+   :show_logoNavBar="show_logoNavBar"
+  >
+  </router-view>
+
 </template>
 
 <style scoped>
