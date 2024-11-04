@@ -22,7 +22,7 @@ import ListNav from './ListNav.vue';
 
         },
         methods: {
-            toggle_theme() {
+            toggle_theme(): void {
                 this.$emit("toggle_theme")
             }
         }

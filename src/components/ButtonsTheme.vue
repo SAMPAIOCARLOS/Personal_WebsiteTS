@@ -7,7 +7,7 @@ import { defineComponent } from 'vue';
             show_btn_theme: { type: Boolean, required: true }
         },
         methods: {
-            toggle_theme() {
+            toggle_theme(): void {
                 this.$emit('toggleTheme')
             }
         }

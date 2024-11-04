@@ -28,7 +28,7 @@ body {
 :root {
     --color--text: #ffffff;
     --color--background: #1B1B1B;
-    --background--container: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    --background--container: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.344) 100%);
     --color--shadow: rgba(255, 255, 255, 0.5);
     --img--background: url('/src/assets/images/paper-cut-abstract-background-3d-clean-dark-carving-art-paper-craft-black-waves-minimalistic-modern-design-business-presentations.jpg');
     --background--project: linear-gradient(135deg, #1B1B1B, #2D2D2D, #4A4A4A);

@@ -10,6 +10,15 @@ interface iconsHeaderType {
     name: String
 }
 
+interface Options {
+    strings: string[] | null
+    typeSpeed: number | null
+    backSpeed: number | null
+    cursorChar: string | null
+    backDelay: number | null
+    loop: boolean | null
+}
+
 interface Data{
     data_icons_socialHeader: iconsHeaderType[],
     array_names: (string | number)[] | null,
@@ -36,18 +45,18 @@ interface Data{
             show_iconScroll: { type: Boolean, required: true },
         },
         methods: {
-            pass_eventToggle_theme() {
+            pass_eventToggle_theme(): void {
                 this.$emit("pass_eventToggle_theme")
             }
         },
         mounted() {
-            const options = {
-                strings: this.array_names as string[] | null,
-                typeSpeed: 80 as number | null, //tempo para os caracteres serem escritos
-                backSpeed: 40 as number | null, //tempo para os caracteres serem apagados
-                cursorChar: "|" as string | null, //O simbolo que aparece no final
-                backDelay: 1000 as number | null, //O tempo antes de apagar o texto
-                loop: true as boolean | null // Se o efeito deve repetir indefinidamente
+            const options: Options  = {
+                strings: this.array_names,
+                typeSpeed: 80, //tempo para os caracteres serem escritos
+                backSpeed: 40, //tempo para os caracteres serem apagados
+                cursorChar: "|", //O simbolo que aparece no final
+                backDelay: 1000, //O tempo antes de apagar o texto
+                loop: true // Se o efeito deve repetir indefinidamente
             };
 
             // Instanciando o Typed.js

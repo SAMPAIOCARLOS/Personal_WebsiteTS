@@ -31,13 +31,13 @@ export default defineComponent({
         }
     },
     methods: {
-        highlight(index: number) {
+        highlight(index: number): void {
             this.highlightedIndex = index
         },
-        removehighlight() {
+        removehighlight(): void {
             this.highlightedIndex = null
         },
-        getHighlightClass(index: number) {
+        getHighlightClass(index: number): string {
             if (this.highlightedIndex === index) {
                 switch(index) {
                     case 0: return 'highlighted_html';

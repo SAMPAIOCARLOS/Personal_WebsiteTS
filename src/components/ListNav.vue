@@ -7,7 +7,7 @@ import { defineComponent } from 'vue';
             data_listNav: { type: Array, required: true }
         },
         methods: {
-            router_contact(title) {
+            router_contact(title: string): void {
                 if(title === 'Contato') {
 
                     alert(title)

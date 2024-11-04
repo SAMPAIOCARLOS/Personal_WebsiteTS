@@ -11,7 +11,7 @@ export default defineComponent({
         show_logoNavBar: { type: Boolean, required: true },
     },
     methods: {
-        pass_eventToggle_theme() {
+        pass_eventToggle_theme(): void {
             this.$emit("pass_eventToggle_theme")
         }
     }

@@ -50,10 +50,10 @@ export default defineComponent({
                 }
             }
         },
-        open_listFull(ListFull_element) {
+        open_listFull(ListFull_element: HTMLElement): void {
             ListFull_element.classList.add('active')
         },
-        pass_eventToggle_theme() {
+        pass_eventToggle_theme(): void {
             this.$emit("pass_eventToggle_theme")
         }
     }

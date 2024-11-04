@@ -82,8 +82,7 @@ export default defineComponent({
         }
     },
     methods: {
-
-        router_details(itemDataProject, title) {
+        router_details(itemDataProject, title): void {
             this.$router.push({ 
                 name: 'Details',
                 params: { title },
