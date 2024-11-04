@@ -35,7 +35,10 @@ export default defineComponent({
                 { id: 3, name: 'Email', type: 'text', class: 'inputs' },
             ],
             data_createCards: [
-                { id: 1, path_icon: 'call-outline', title: 'Numero de telefone', description: '(99) 98513-7413' }
+                { id: 1, path_icon: 'call-outline', title: 'Numero de telefone', description: '(99) 98513-7413' },
+                { id: 2, path_icon: 'mail-outline', title: 'Email para contato', description: 'sampaiocarlos957@gmail.com' },
+                { id: 3, path_icon: 'location-outline', title: 'Endereço', description: 'São luis MA' },
+                { id: 4, path_icon: 'logo-linkedin', title: 'Linkedin', description: 'Link do linkedin' }
             ]
         }
     },
@@ -72,6 +75,17 @@ export default defineComponent({
                         <Form :dataCreateForm="data_createInput"/>
                         
                         <div id="container_cards">
+                            <div v-for="item_createCard in data_createCards" :key="item_createCard.id" class="cardContact">
+                                <div class="container_iconContact">
+                                    <ion-icon :name="item_createCard.path_icon"></ion-icon>
+                                </div>
+
+                                <div class="container_textContent">
+                                    <h2>{{ item_createCard.title }}</h2>
+
+                                    <p class="descriptionCard">{{ item_createCard.description }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -169,6 +183,48 @@ a {
 
 #container_cards {
     width: 45%;
-    border: 3px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    /* border: 3px solid rgb(255, 255, 255); */
+}
+
+.cardContact {
+    /* border: 2px solid red; */
+    width: 40%;
+    height: 45%;
+    background: #000000bb;
+    border-radius: 6px;
+    transition: all 0.5s;
+    border: 3px solid transparent;
+}
+.cardContact:hover {
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px #ffffffa2;
+}
+.container_iconContact {
+    width: 100%;
+    height: 30%;
+    /* border: 2px solid blue; */
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+.container_textContent {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+h2 {
+    font-weight: 200;
+    font-size: 1.3rem;
+}
+.descriptionCard {
+    font-size: 0.8rem;
 }
 </style>

@@ -12,11 +12,11 @@ export default defineComponent({
 <template>
     <form>
 
-        <!-- <aside>
+        <aside>
             <h2>Contate-me</h2>
 
             <h1>Entre em contato</h1>
-        </aside> -->
+        </aside>
 
         <aside v-for="item_createInputs in dataCreateForm" :key="item_createInputs.id">
             <label :for="item_createInputs.name">{{ item_createInputs.name }}: </label>
@@ -69,5 +69,9 @@ textarea {
     max-width: 100%;
     min-height: 7rem;
     max-height: 7rem;
+}
+
+h1 {
+    font-size: 2.5vw;
 }
 </style>
