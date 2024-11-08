@@ -66,8 +66,10 @@ export default defineComponent({
         <div class="container_main_center">
             <div id="content_navBar">
                 <div id="container_logo">
-                    <img src="/src/assets/images/CARLOS SAMPAIO _ DEV_LIGHT.png" alt="imagem da logo principal" v-if="show_logoNavBar">
-                    <img src="/src/assets/images/CARLOS SAMPAIO _ DEV_DARK.png" alt="imagem da logo principal" v-else>
+                    <a href="http://localhost:3000">
+                        <img src="/src/assets/images/CARLOS SAMPAIO _ DEV_LIGHT.png" alt="imagem da logo principal" v-if="show_logoNavBar">
+                        <img src="/src/assets/images/CARLOS SAMPAIO _ DEV_DARK.png" alt="imagem da logo principal" v-else>
+                    </a>
                 </div>
 
                 <ListNav id="listNav_navbar" :data_listNav="data_path_NavBar"/>
@@ -110,7 +112,7 @@ nav {
     width: 25%;
     min-width: 20rem;
 }
-#container_logo > img {
+#container_logo > a > img {
     width: 100%;
     height: 100%;
     object-fit: contain;

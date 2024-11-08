@@ -10,6 +10,7 @@ interface dataIconsTech {
 interface data_project {
     id: number;
     path_img: string;
+    path_img_logoName: string;
     title: string;
     text: string;
     data_Icon: dataIconsTech[];
@@ -27,6 +28,7 @@ export default defineComponent({
                 { 
                     id: 1,
                      path_img: '/src/assets/images/detalhes_telas_website.png',
+                     path_img_logoName: '/src/assets/images/logoDetalispage.png',
                       title: 'Personal WebSite',
                        text: 'Este projeto é um portfólio pessoal interativo desenvolvido com Vue.js. ',
                         data_Icon: [
@@ -38,6 +40,7 @@ export default defineComponent({
                 { 
                     id: 2,
                      path_img: '/src/assets/images/detalhes_telas_easybank.png',
+                     path_img_logoName: '/src/assets/images/logoDetailspageEasybank.png',
                       title: 'Easybank',
                        text: 'Este é um projeto de landing page com quatro seções para promover o banco Easybank.',
                         data_Icon: [
@@ -48,6 +51,7 @@ export default defineComponent({
                 { 
                     id: 3,
                      path_img: '/src/assets/images/detalhes_telas_discoverland.png',
+                     path_img_logoName: '/src/assets/images/logoDetailspageDiscoverLand.png',
                       title: 'Discover land',
                        text: 'Este projeto exibe fotos de países e informações detalhadas em um modal, com um campo de busca.',
                         data_Icon: [
@@ -58,6 +62,7 @@ export default defineComponent({
                 { 
                     id: 4,
                      path_img: '/src/assets/images/detalhes_telas_agendamento_fmrb.png',
+                     path_img_logoName: '/src/assets/images/logoDetailsFMRB.png',
                       title: 'Agedamento FMRB',
                        text: 'Projeto governamental para desenvolvimento de um sistema de agendamento de visitas para à (FMRB).',
                         data_Icon: [
@@ -69,6 +74,7 @@ export default defineComponent({
                 { 
                     id: 5,
                      path_img: '/src/assets/images/detalhes_telas_selo.png',
+                     path_img_logoName: '/src/assets/images/logoDetailsSelo.png',
                       title: 'Selo Quilombos',
                        text: 'Projeto governamental para desenvolvimento de um Portal de notícias com dois formularios para o uso do selo',
                         data_Icon: [
@@ -88,6 +94,7 @@ export default defineComponent({
                 params: { title },
                 query: { 
                     img_card: itemDataProject.path_img,
+                    img_logoName: itemDataProject.path_img_logoName,
                     title: itemDataProject.title, 
                     description: itemDataProject.text
                 }
