@@ -7,13 +7,13 @@ O portfólio inclui as seguintes seções: Início, Habilidades e Projetos. Alé
 
 ## 📸 Demonstração
 ### Versão Desktop
-![Versão Desktop](/src/assets/images/imgs_detailsProjects/imagemDetailsPersonal_website.png)
+![Versão Desktop](/src/assets/images/imgs_detailsProjects/Macbook-Air-localhost.png)
 
 ### Versão Mobile
-![Versão Mobile](link-da-imagem-mobile)
+![Versão Mobile](/src/assets/images/imgs_detailsProjects/iPhone-14-Plus-localhost.png)
 
 ## 🎨 Layout no Figma
-![Layout no Figma](link-do-layout-no-figma)
+![Layout no Figma](/src/assets/images/imgs_detailsProjects/layout.png)
 
 ## 🚀 Funcionalidades
 - Seções de Início, Habilidades e Projetos.
