@@ -37,7 +37,7 @@ import TheFooter from './components/TheFooter.vue';
     methods: {
       toggle_theme() {
 
-        this.BodyElement.classList.toggle("theme_Light");
+        this.BodyElement?.classList.toggle("theme_Light");
 
         if(this.BodyElement.classList.contains("theme_Light")) {
           console.log("dark");
