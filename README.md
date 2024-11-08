@@ -1,6 +1,38 @@
-# Vue 3 + TypeScript + Vite
+# Portfólio Pessoal com Vue e TypeScript
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 📜 Descrição (Português)
+Este é o meu portfólio pessoal desenvolvido com Vue.js e TypeScript. Foi uma excelente oportunidade para aplicar e aprofundar meus conhecimentos em TypeScript, juntamente com o Vue, proporcionando uma experiência de front-end moderna e robusta. Todo o layout foi planejado e projetado por mim no Figma, resultando em uma interface amigável e visualmente atraente. 
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
-"# Personal_WebsiteTS" 
+O portfólio inclui as seguintes seções: Início, Habilidades e Projetos. Além disso, conta com paginação para uma página de contato e navegação para páginas detalhadas de cada projeto usando Vue Router.
+
+## 📸 Demonstração
+### Versão Desktop
+![Versão Desktop](/src/assets/images/imgs_detailsProjects/Macbook-Air-localhost.png)
+
+### Versão Mobile
+![Versão Mobile](/src/assets/images/imgs_detailsProjects/iPhone-14-Plus-localhost.png)
+
+## 🎨 Layout no Figma
+![Layout no Figma](/src/assets/images/imgs_detailsProjects/layout.png)
+
+## 🚀 Funcionalidades
+- Seções de Início, Habilidades e Projetos.
+- Paginação para uma página de contato através do Vue Router.
+- Navegação para páginas de detalhes de cada projeto com Vue Router.
+- Design responsivo para diferentes dispositivos.
+
+## 💻 Tecnologias Utilizadas
+## 💻 Tecnologias Utilizadas
+ ![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
+ ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) 
+ ![Vue Router](https://img.shields.io/badge/-Vue_Router-4FC08D?style=flat&logo=vue.js&logoColor=white) 
+ ![npm](https://img.shields.io/badge/-npm-CB3837?style=flat&logo=npm&logoColor=white)
+ ![Figma](https://img.shields.io/badge/-Figma-000000?style=flat&logo=figma&logoColor=white)
+
+## 📂 Estrutura de Pastas
+![Estrutura de Pastas](link-da-imagem-da-estrutura)
+
+## 🚀 Como Usar
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/SeuUsuario/portfolio-vue-typescript.git
