@@ -28,20 +28,30 @@ body {
 :root {
     --color--text: #ffffff;
     --color--background: #1B1B1B;
+    --color--background--card: rgba(0, 0, 0, 0.696);
+    --color--background--form: rgba(27, 27, 27, 0.7);
+    --color--background--inputs: #33333348;
     --background--container: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.344) 100%);
     --color--shadow: rgba(255, 255, 255, 0.5);
     --img--background: url('/src/assets/images/paper-cut-abstract-background-3d-clean-dark-carving-art-paper-craft-black-waves-minimalistic-modern-design-business-presentations.jpg');
     --background--project: linear-gradient(135deg, #1B1B1B, #2D2D2D, #4A4A4A);
+
+    --img--backgroundContactForm: url('/src/assets/images/backgrondContactFormDark.jpg');
 
 }
 
 .theme_Light {
     --color--text: #000000;
     --color--background: aliceblue;
+    --color--background--card: rgba(255, 255, 255, 0.696);
+    --color--background--form: rgba(225, 225, 225, 0.7);
+    --color--background--inputs: #ffffff48;
     --background--container: linear-gradient(to top, rgb(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.322) 100%);
     --color--shadow: rgba(0, 0, 0, 0.903);
     --img--background: url('/src/assets/images/many-blank-business-cards\ 1.png');
     --background--project: url('/src/assets//images/6a2089b7-1d18-45b5-9e6c-67295039764c.jpg');
+
+    --img--backgroundContactForm: url('/src/assets/images/backgrondContactFormWhite.jpg');
 }
 
 

@@ -156,7 +156,7 @@ a {
     width: 100%;
     min-height: 100vh;
     /* border: 4px solid rgb(77, 255, 0); */
-    background: url('../assets/images/fundo_contactForm.png') no-repeat center;
+    background: var(--img--backgroundContactForm) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }

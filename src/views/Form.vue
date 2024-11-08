@@ -46,7 +46,7 @@ form {
     justify-content: space-evenly;
     gap: 20px;
     color: var(--color--text);
-    background: rgba(27, 27, 27, 0.7);
+    background: var(--color--background--form);
     backdrop-filter: blur(10px);
     padding: 4rem 2rem;
     border-radius: 10px;
@@ -62,7 +62,7 @@ aside {
     padding: 10px;
     outline: none;
     border: 3px solid transparent;
-    background: #33333348;
+    background: var(--color--background--inputs);
     /* backdrop-filter: blur(20px); */
     border-radius: 5px;
     transition: all 0.3s;

@@ -27,7 +27,7 @@ export default defineComponent({
             dataCards_project: [
                 { 
                     id: 1,
-                     path_img: '/src/assets/images/detalhes_telas_website.png',
+                     path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsPersonal_website.png',
                      path_img_logoName: '/src/assets/images/logoDetalispage.png',
                       title: 'Personal WebSite',
                        text: 'Este projeto é um portfólio pessoal interativo desenvolvido com Vue.js. ',
@@ -39,7 +39,7 @@ export default defineComponent({
                 },
                 { 
                     id: 2,
-                     path_img: '/src/assets/images/detalhes_telas_easybank.png',
+                     path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsEasybank.png',
                      path_img_logoName: '/src/assets/images/logoDetailspageEasybank.png',
                       title: 'Easybank',
                        text: 'Este é um projeto de landing page com quatro seções para promover o banco Easybank.',
@@ -50,7 +50,7 @@ export default defineComponent({
                 },
                 { 
                     id: 3,
-                     path_img: '/src/assets/images/detalhes_telas_discoverland.png',
+                     path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsDiscoverBank.png',
                      path_img_logoName: '/src/assets/images/logoDetailspageDiscoverLand.png',
                       title: 'Discover land',
                        text: 'Este projeto exibe fotos de países e informações detalhadas em um modal, com um campo de busca.',
@@ -61,7 +61,7 @@ export default defineComponent({
                 },
                 { 
                     id: 4,
-                     path_img: '/src/assets/images/detalhes_telas_agendamento_fmrb.png',
+                     path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsAgendamentoFmrb.png',
                      path_img_logoName: '/src/assets/images/logoDetailsFMRB.png',
                       title: 'Agedamento FMRB',
                        text: 'Projeto governamental para desenvolvimento de um sistema de agendamento de visitas para à (FMRB).',
@@ -73,7 +73,7 @@ export default defineComponent({
                 },
                 { 
                     id: 5,
-                     path_img: '/src/assets/images/detalhes_telas_selo.png',
+                     path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsSeloQuilomnos.png',
                      path_img_logoName: '/src/assets/images/logoDetailsSelo.png',
                       title: 'Selo Quilombos',
                        text: 'Projeto governamental para desenvolvimento de um Portal de notícias com dois formularios para o uso do selo',
@@ -142,11 +142,13 @@ export default defineComponent({
     /* border: 3px solid rgb(34, 255, 0); */
     width: 100%;
     height: 20rem;
+    display: flex;
+    justify-content: center;
 }
 .contaier_imgProject > img {
     object-fit: contain;
-    width: 100%;
-    height: 110%;
+    width: 90%;
+    height: 90%;
 }
 
 .textContent_cardProject {

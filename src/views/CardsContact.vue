@@ -28,7 +28,7 @@ export default defineComponent({
     width: 45%;
     height: 35vh;
     min-height: 13rem;
-    background-color: rgba(0, 0, 0, 0.696);
+    background-color: var(--color--background--card);
     border-radius: 8px;
     border: 3px solid transparent;
     transition: all 0.4s;

@@ -79,7 +79,7 @@ span:hover {
     min-height: 50vh;
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 35px;
     flex-wrap: wrap;
 }
 
