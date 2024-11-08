@@ -22,10 +22,12 @@ O portfólio inclui as seguintes seções: Início, Habilidades e Projetos. Alé
 - Design responsivo para diferentes dispositivos.
 
 ## 💻 Tecnologias Utilizadas
-- ![Vue.js](https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/vuejs.svg) Vue.js 3
-- ![TypeScript](https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/typescript.svg) TypeScript
-- ![Vue Router](https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/vue-router.svg) Vue Router
-- ![Figma](https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/figma.svg) Figma (para o design)
+## 💻 Tecnologias Utilizadas
+- ![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white) Vue.js 3
+- ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) TypeScript
+- ![Vue Router](https://img.shields.io/badge/-Vue_Router-4FC08D?style=flat&logo=vue.js&logoColor=white) Vue Router
+- ![Figma](https://img.shields.io/badge/-Figma-000000?style=flat&logo=figma&logoColor=white) Figma (para o design)
+
 
 ## 📂 Estrutura de Pastas
 ![Estrutura de Pastas](link-da-imagem-da-estrutura)
