@@ -4,6 +4,9 @@ import { defineComponent } from 'vue'
 import NavBar from '../components/NavBar.vue'
 import TheFooter from '../components/TheFooter.vue'
 import Form from '../views/Form.vue'
+import ButtonScroll from '../components/ButtonScroll.vue'
+import CardsContact from '../views/CardsContact.vue'
+
 
 interface dataCreateInputs {
     id: number;
@@ -21,12 +24,13 @@ interface dataCreateCards {
 
 interface Data {
     data_createInput: dataCreateInputs[];
-    data_createCards: dataCreateCards[]
+    data_createCards: dataCreateCards[];
+    path_href: string
 }
 
 export default defineComponent({
     name: 'Contact',
-    components: { NavBar, TheFooter, Form },
+    components: { NavBar, TheFooter, Form, ButtonScroll, CardsContact },
     data(): Data {
         return {
             data_createInput: [
@@ -38,13 +42,15 @@ export default defineComponent({
                 { id: 1, path_icon: 'call-outline', title: 'Numero de telefone', description: '(99) 98513-7413' },
                 { id: 2, path_icon: 'mail-outline', title: 'Email para contato', description: 'sampaiocarlos957@gmail.com' },
                 { id: 3, path_icon: 'location-outline', title: 'Endereço', description: 'São luis MA' },
-                { id: 4, path_icon: 'logo-linkedin', title: 'Linkedin', description: 'Link do linkedin' }
-            ]
+                { id: 4, path_icon: 'logo-linkedin', title: 'Linkedin', description: 'Link do linkedin' },
+            ],
+            path_href: '#container_formContact'
         }
     },
     props: {
         show_btn_theme: { type: Boolean, required: true },
         show_logoNavBar: { type: Boolean, required: true },
+        show_iconScroll: { type: Boolean, required: true },
     },
     methods: {
         pass_eventToggle_theme(): void {
@@ -63,34 +69,26 @@ export default defineComponent({
                 <div id="box_textContect_header">
                     <h1>Contate-me</h1>
                     <p><a href="https://www.linkedin.com/in/carlos-sampaio-a02651265/" target="blank">Linkedin</a> | <a href="https://github.com/SAMPAIOCARLOS" target="blank">GitHub</a></p>
+
+                    <ButtonScroll :show_iconScroll="show_iconScroll" :pathHref="path_href"/>
                 </div>
             </div>
         </div>
 
         <div id="container_formContact">
-            <div id="shadow_container_formContact">
-                <div class="container_main_center">
-                    <div id="group_FormCard">
+            <div class="container_main_center">
+                <div id="subContainer_formContact">
 
-                        <Form :dataCreateForm="data_createInput"/>
-                        
-                        <div id="container_cards">
-                            <div v-for="item_createCard in data_createCards" :key="item_createCard.id" class="cardContact">
-                                <div class="container_iconContact">
-                                    <ion-icon :name="item_createCard.path_icon"></ion-icon>
-                                </div>
+                    <Form :dataCreateForm="data_createInput"/>
 
-                                <div class="container_textContent">
-                                    <h2>{{ item_createCard.title }}</h2>
 
-                                    <p class="descriptionCard">{{ item_createCard.description }}</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="container_cards">
+                        <CardsContact :data_createCards="data_createCards"/>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <TheFooter />
@@ -123,11 +121,12 @@ export default defineComponent({
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 90%;
      /* cor preta com 50% de opacidade */
     z-index: 1; /* coloca o overlay atrás do conteúdo */
 
     background: var(--background--container);
+    padding-top: 5rem;
 }
 
 #headerContact > * {
@@ -136,7 +135,7 @@ export default defineComponent({
 }
 
 #box_textContect_header {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -152,79 +151,73 @@ a {
     text-decoration: none;
     color: var(--color--text);
 }
+
 #container_formContact {
-    border: 3px solid green;
     width: 100%;
     min-height: 100vh;
-    background: url('/src/assets/images/335e271745aa573c4554952bf96ee698.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
+    /* border: 4px solid rgb(77, 255, 0); */
+    background: url('../assets/images/fundo_contactForm.png') no-repeat center;
     background-size: cover;
     background-attachment: fixed;
+}
+
+
+#subContainer_formContact {
+    /* border: 4px solid #fff; */
+    width: 100%;
+    min-height: 70vh;
+    margin: 90px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#container_cards {
+    /* border: 4px solid blue; */
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
     
 }
 
-#shadow_container_formContact {
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.489), rgba(0, 0, 0, 0.741), rgba(0, 0, 0, 0.873), rgb(0, 0, 0));
-    display: flex;
-    align-items: center;
+@media(max-width: 1200px) {
+ #container_cards {
+    width: 50%;
+ }
+}
+@media(max-width: 1000px) {
+    #subContainer_formContact {
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    #container_cards {
+        width: 100%;
+    }
 }
 
-#group_FormCard {
-    /* border: 3px solid red; */
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+@media(max-width: 900px) {
+    h1 {
+        font-size: 7vw;
+    }
 }
 
-
-#container_cards {
-    width: 45%;
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    flex-wrap: wrap;
-    /* border: 3px solid rgb(255, 255, 255); */
+@media(max-width: 600px) {
+    h1 {
+        font-size: 9vw;
+    }
 }
-
-.cardContact {
-    /* border: 2px solid red; */
-    width: 40%;
-    height: 45%;
-    background: #000000bb;
-    border-radius: 6px;
-    transition: all 0.5s;
-    border: 3px solid transparent;
+@media(max-width: 500px) {
+    #container_cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
-.cardContact:hover {
-    border: 3px solid #fff;
-    box-shadow: 0 0 10px #ffffffa2;
-}
-.container_iconContact {
-    width: 100%;
-    height: 30%;
-    /* border: 2px solid blue; */
-    font-size: 4vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 15px;
-}
-.container_textContent {
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-h2 {
-    font-weight: 200;
-    font-size: 1.3rem;
-}
-.descriptionCard {
-    font-size: 0.8rem;
+@media(max-width: 300px) {
+    h1 {
+        font-size: 12vw;
+    }
 }
 </style>

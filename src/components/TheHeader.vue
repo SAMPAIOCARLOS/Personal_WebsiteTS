@@ -1,8 +1,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import NavBar from './NavBar.vue';
+import ButtonScroll from './ButtonScroll.vue';
 
 import Typed from 'typed.js';
+
 
 interface iconsHeaderType {
     id: number,
@@ -23,11 +25,12 @@ interface Data{
     data_icons_socialHeader: iconsHeaderType[],
     array_names: (string | number)[] | null,
     typed: Typed | null;
+    path_href: string
 }
 
     export default defineComponent({
         name: 'TheHeader',
-        components: { NavBar },
+        components: { NavBar, ButtonScroll },
         data(): Data {
             return {
                 data_icons_socialHeader: [
@@ -36,7 +39,8 @@ interface Data{
                     { id: 3, path: 'https://mail.google.com/mail/u/1/?pli=1#inbox', name: 'mail-outline' }
                 ],
                 array_names: ['Desenvolvedor front-end', 'Front-end developer', 'Desenvolvedor front-end', 'Front-end developer'],
-                typed: null
+                typed: null,
+                path_href: '#container_skills'
             }
         },
         props: {
@@ -91,12 +95,7 @@ interface Data{
                 <div class="bar_header"></div>
             </aside>
 
-            <aside id="container_icons_scroll">
-                <a href="#container_skills">
-                    <img v-if="show_iconScroll" src="/src/assets/images/icons_scroll_dark.png" alt="">
-                    <img v-else src="/src/assets/images/icons_scroll_white.png" alt="">
-                </a>
-            </aside>
+            <ButtonScroll :show_iconScroll="show_iconScroll" :pathHref="path_href"/>
 
             
         </div>
@@ -202,13 +201,7 @@ h2 {
     color: #4036FF;
 }
 
-#container_icons_scroll {
-    width: 70px;
-}
 
-#container_icons_scroll > a > img {
-    width: 100%;
-}
 
 @media(max-width: 1000px) {
     h1 {

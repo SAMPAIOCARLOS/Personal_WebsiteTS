@@ -27,6 +27,12 @@ export default defineComponent({
             <label for="message">Mensagem:</label>
             <textarea name="message" id="message" class="inputs"></textarea>
         </aside>
+
+        
+
+        <aside>
+            <button>Enviar</button>
+        </aside>
     </form>
 </template>
 
@@ -40,9 +46,11 @@ form {
     justify-content: space-evenly;
     gap: 20px;
     color: var(--color--text);
-    background: #1B1B1B;
-    padding: 2rem;
+    background: rgba(27, 27, 27, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 4rem 2rem;
     border-radius: 10px;
+    background: blur(2px);
 }
 aside {
     width: 100%;
@@ -54,10 +62,12 @@ aside {
     padding: 10px;
     outline: none;
     border: 3px solid transparent;
-    background: #333333;
+    background: #33333348;
+    /* backdrop-filter: blur(20px); */
     border-radius: 5px;
     transition: all 0.3s;
     color: var(--color--text);
+    
 }
 
 .inputs:focus {
@@ -73,5 +83,55 @@ textarea {
 
 h1 {
     font-size: 2.5vw;
+}
+
+button {
+    padding: 5px;
+    border: none;
+    transition: all 0.3s;
+    border-radius: 6px;
+    background-color: #4036FF;
+    font-size: 1.7vw;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+@media(max-width: 1000px) {
+    form {
+        width: 100%;
+    }
+}
+@media(max-width: 800px) {
+    h1 {
+        font-size: 4.5vw;
+    }
+
+    button {
+        font-size: 3vw;
+    }
+
+}
+
+@media(max-width: 600px) {
+    h1 {
+        font-size: 6.5vw;
+    }
+
+    button {
+        font-size: 5vw;
+    }
+
+}
+
+@media(max-width: 600px) {
+    h1 {
+        font-size: 7.5vw;
+    }
+
+    button {
+        font-size: 6vw;
+    }
+
 }
 </style>

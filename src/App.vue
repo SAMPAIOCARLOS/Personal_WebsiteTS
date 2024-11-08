@@ -75,8 +75,9 @@ import TheFooter from './components/TheFooter.vue';
 
   <router-view 
   @pass_eventToggle_theme="toggle_theme"
-  :show_btn_theme="show_btn_theme"
+   :show_btn_theme="show_btn_theme"
    :show_logoNavBar="show_logoNavBar"
+   :show_iconScroll="show_iconScroll"
   >
   </router-view>
 
