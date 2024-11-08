@@ -22,7 +22,6 @@ O portfólio inclui as seguintes seções: Início, Habilidades e Projetos. Alé
 - Design responsivo para diferentes dispositivos.
 
 ## 💻 Tecnologias Utilizadas
-## 💻 Tecnologias Utilizadas
  ![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
  ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) 
  ![Vue Router](https://img.shields.io/badge/-Vue_Router-4FC08D?style=flat&logo=vue.js&logoColor=white) 
