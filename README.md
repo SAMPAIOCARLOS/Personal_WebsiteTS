@@ -7,7 +7,7 @@ O portfólio inclui as seguintes seções: Início, Habilidades e Projetos. Alé
 
 ## 📸 Demonstração
 ### Versão Desktop
-![Versão Desktop](/src/assets/images/imgs_detailsProjects/Macbook-Air-localhost.png)
+![Versão Desktop](/src/assets/images/imgs_detailsProjects/imagemDetailsPersonal_website.png)
 
 ### Versão Mobile
 ![Versão Mobile](/src/assets/images/imgs_detailsProjects/iPhone-14-Plus-localhost.png)
