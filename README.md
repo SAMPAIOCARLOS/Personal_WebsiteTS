@@ -6,11 +6,8 @@ Este é o meu portfólio pessoal desenvolvido com Vue.js e TypeScript. Foi uma e
 O portfólio inclui as seguintes seções: Início, Habilidades e Projetos. Além disso, conta com paginação para uma página de contato e navegação para páginas detalhadas de cada projeto usando Vue Router.
 
 ## 📸 Demonstração
-### Versão Desktop
+### Versão Desktop & Mobile
 ![Versão Desktop](/src/assets/images/imgs_detailsProjects/imagemDetailsPersonal_website.png)
-
-### Versão Mobile
-![Versão Mobile](/src/assets/images/imgs_detailsProjects/iPhone-14-Plus-localhost.png)
 
 ## 🎨 Layout no Figma
 ![Layout no Figma](/src/assets/images/imgs_detailsProjects/layout.png)
