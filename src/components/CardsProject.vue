@@ -1,108 +1,110 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
-interface dataIconsTech {
+// Definição das interfaces para maior clareza do TypeScript
+interface DataIconsTech {
     name_icon: string;
     name_tech: string;
-    color: string
+    color: string;
 }
 
-interface data_project {
+interface DataProject {
     id: number;
     path_img: string;
     path_img_logoName: string;
     title: string;
     text: string;
-    data_Icon: dataIconsTech[];
+    data_Icon: DataIconsTech[];
 }
 
-interface Data {
-    dataCards_project: data_project[]
+interface ComponentData {
+    dataCards_project: DataProject[];
 }
 
 export default defineComponent({
     name: "CardsProject",
-    data(): Data {
+    data(): ComponentData {
         return {
             dataCards_project: [
-                { 
+                {
                     id: 1,
-                     path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsPersonal_website.png',
-                     path_img_logoName: '/src/assets/images/logoDetalispage.png',
-                      title: 'Personal WebSite',
-                       text: 'Este projeto é um portfólio pessoal interativo desenvolvido com Vue.js. ',
-                        data_Icon: [
-                            { name_icon: '/src/assets/images/icons_tech/vue.png', name_tech: 'VUE', color: '#42B883' },
-                            { name_icon: '/src/assets/images/icons_tech/typescript.png', name_tech: 'TYPESCRIPT', color: '#C53635' },
-                            { name_icon: '/src/assets/images/icons_tech/npm.png', name_tech: 'NPM', color: '#C53635' }
-                        ],
+                    path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsPersonal_website.png',
+                    path_img_logoName: '/src/assets/images/logoDetalispage.png',
+                    title: 'Personal WebSite',
+                    text: 'Este projeto é um portfólio pessoal interativo desenvolvido com Vue.js.',
+                    data_Icon: [
+                        { name_icon: '/src/assets/images/icons_tech/vue.png', name_tech: 'VUE', color: '#42B883' },
+                        { name_icon: '/src/assets/images/icons_tech/typescript.png', name_tech: 'TYPESCRIPT', color: '#C53635' },
+                        { name_icon: '/src/assets/images/icons_tech/npm.png', name_tech: 'NPM', color: '#C53635' }
+                    ],
                 },
-                { 
+                {
                     id: 2,
-                     path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsEasybank.png',
-                     path_img_logoName: '/src/assets/images/logoDetailspageEasybank.png',
-                      title: 'Easybank',
-                       text: 'Este é um projeto de landing page com quatro seções para promover o banco Easybank.',
-                        data_Icon: [
-                            { name_icon: '/src/assets/images/icons_tech/vue.png', name_tech: 'VUE', color: '#42B883' },
-                            { name_icon: '/src/assets/images/icons_tech/npm.png', name_tech: 'NPM', color: '#C53635' }
-                        ],
+                    path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsEasybank.png',
+                    path_img_logoName: '/src/assets/images/logoDetailspageEasybank.png',
+                    title: 'Easybank',
+                    text: 'Este é um projeto de landing page com quatro seções para promover o banco Easybank.',
+                    data_Icon: [
+                        { name_icon: '/src/assets/images/icons_tech/vue.png', name_tech: 'VUE', color: '#42B883' },
+                        { name_icon: '/src/assets/images/icons_tech/npm.png', name_tech: 'NPM', color: '#C53635' }
+                    ],
                 },
-                { 
+                {
                     id: 3,
-                     path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsDiscoverBank.png',
-                     path_img_logoName: '/src/assets/images/logoDetailspageDiscoverLand.png',
-                      title: 'Discover land',
-                       text: 'Este projeto exibe fotos de países e informações detalhadas em um modal, com um campo de busca.',
-                        data_Icon: [
-                            { name_icon: '/src/assets/images/icons_tech/vue.png', name_tech: 'VUE', color: '#42B883' },
-                            { name_icon: '/src/assets/images/icons_tech/npm.png', name_tech: 'NPM', color: '#C53635' }
-                        ],
+                    path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsDiscoverBank.png',
+                    path_img_logoName: '/src/assets/images/logoDetailspageDiscoverLand.png',
+                    title: 'Discover land',
+                    text: 'Este projeto exibe fotos de países e informações detalhadas em um modal, com um campo de busca.',
+                    data_Icon: [
+                        { name_icon: '/src/assets/images/icons_tech/vue.png', name_tech: 'VUE', color: '#42B883' },
+                        { name_icon: '/src/assets/images/icons_tech/npm.png', name_tech: 'NPM', color: '#C53635' }
+                    ],
                 },
-                { 
+                {
                     id: 4,
-                     path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsAgendamentoFmrb.png',
-                     path_img_logoName: '/src/assets/images/logoDetailsFMRB.png',
-                      title: 'Agedamento FMRB',
-                       text: 'Projeto governamental para desenvolvimento de um sistema de agendamento de visitas para à (FMRB).',
-                        data_Icon: [
-                            { name_icon: '/src/assets/images/icons_tech/html.png', name_tech: 'HTML5', color: '#F05032' },
-                            { name_icon: '/src/assets/images/icons_tech/css.png', name_tech: 'CSS3', color: '#1098fa' },
-                            { name_icon: '/src/assets/images/icons_tech/javascript.png', name_tech: 'JAVASCRIPT', color: '#F7DF1E' }
-                        ],
+                    path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsAgendamentoFmrb.png',
+                    path_img_logoName: '/src/assets/images/logoDetailsFMRB.png',
+                    title: 'Agendamento FMRB',
+                    text: 'Projeto governamental para desenvolvimento de um sistema de agendamento de visitas para à (FMRB).',
+                    data_Icon: [
+                        { name_icon: '/src/assets/images/icons_tech/html.png', name_tech: 'HTML5', color: '#F05032' },
+                        { name_icon: '/src/assets/images/icons_tech/css.png', name_tech: 'CSS3', color: '#1098fa' },
+                        { name_icon: '/src/assets/images/icons_tech/javascript.png', name_tech: 'JAVASCRIPT', color: '#F7DF1E' }
+                    ],
                 },
-                { 
+                {
                     id: 5,
-                     path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsSeloQuilomnos.png',
-                     path_img_logoName: '/src/assets/images/logoDetailsSelo.png',
-                      title: 'Selo Quilombos',
-                       text: 'Projeto governamental para desenvolvimento de um Portal de notícias com dois formularios para o uso do selo',
-                        data_Icon: [
-                            { name_icon: '/src/assets/images/icons_tech/html.png', name_tech: 'HTML5', color: '#F05032' },
-                            { name_icon: '/src/assets/images/icons_tech/css.png', name_tech: 'CSS3', color: '#1098fa' },
-                            { name_icon: '/src/assets/images/icons_tech/javascript.png', name_tech: 'JAVASCRIPT', color: '#F7DF1E' },
-                            { name_icon: '/src/assets/images/icons_tech/wordpress.png', name_tech: 'WORDPRESS', color: '#1098fa' }
-                        ],
+                    path_img: '/src/assets/images/imgs_detailsProjects/imagemDetailsSeloQuilomnos.png',
+                    path_img_logoName: '/src/assets/images/logoDetailsSelo.png',
+                    title: 'Selo Quilombos',
+                    text: 'Projeto governamental para desenvolvimento de um Portal de notícias com dois formulários para o uso do selo',
+                    data_Icon: [
+                        { name_icon: '/src/assets/images/icons_tech/html.png', name_tech: 'HTML5', color: '#F05032' },
+                        { name_icon: '/src/assets/images/icons_tech/css.png', name_tech: 'CSS3', color: '#1098fa' },
+                        { name_icon: '/src/assets/images/icons_tech/javascript.png', name_tech: 'JAVASCRIPT', color: '#F7DF1E' },
+                        { name_icon: '/src/assets/images/icons_tech/wordpress.png', name_tech: 'WORDPRESS', color: '#1098fa' }
+                    ],
                 }
             ]
-        }
+        };
     },
     methods: {
-        router_details(itemDataProject: data_project, title: string): void {
-            this.$router.push({ 
+        router_details(itemDataProject: DataProject, title: string): void {
+            this.$router.push({
                 name: 'Details',
                 params: { title },
-                query: { 
+                query: {
                     img_card: itemDataProject.path_img,
                     img_logoName: itemDataProject.path_img_logoName,
-                    title: itemDataProject.title, 
+                    title: itemDataProject.title,
                     description: itemDataProject.text
                 }
             });
         }
     }
-})
+});
 </script>
+
 
 <template>
     <div v-for="itemDataProject in dataCards_project" :key="itemDataProject.id" class="cardProject">

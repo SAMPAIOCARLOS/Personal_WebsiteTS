@@ -1,64 +1,59 @@
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import ButtonsTheme from './ButtonsTheme.vue'
-import ListNav from './ListNav.vue'
-import ListFull from './ListFull.vue'
+import { defineComponent, ref } from 'vue';
+import ButtonsTheme from './ButtonsTheme.vue';
+import ListNav from './ListNav.vue';
+import ListFull from './ListFull.vue';
 
-  interface navBarType {
-    id: number,
-    text_content: string,
-    path: string,
-    icon: string
-  }
+interface NavBarType {
+  id: number;
+  text_content: string;
+  path: string;
+  icon: string;
+}
 
-  interface Data {
-    data_path_NavBar: navBarType[]
-    show_listFull: boolean,
-  }
+interface Data {
+  data_path_NavBar: NavBarType[];
+  show_listFull: boolean;
+}
 
 export default defineComponent({
-    name: 'NavBar',
-    components: { ListNav, ButtonsTheme, ListFull },
-    props: {
-        show_btn_theme: { type: Boolean, required: true },
-        show_logoNavBar: { type: Boolean, required: true }
+  name: 'NavBar',
+  components: { ListNav, ButtonsTheme, ListFull },
+  props: {
+    show_btn_theme: { type: Boolean, required: true },
+    show_logoNavBar: { type: Boolean, required: true }
+  },
+  data(): Data {
+    return {
+      data_path_NavBar: [
+        { id: 1, text_content: 'Inicio', path: '/#header', icon: 'home-outline' },
+        { id: 2, text_content: 'Habilidades', path: '/#container_skills', icon: 'hammer-outline' },
+        { id: 3, text_content: 'Projetos', path: '/#container_project', icon: 'bag-check-outline' },
+        { id: 4, text_content: 'Contato', path: '', icon: 'call-outline' }
+      ],
+      show_listFull: false,
+    };
+  },
+  methods: {
+    toggle_btn(): void {
+      const hamburguerRef = this.$refs.hamburguerRef as HTMLElement | null;
+      if (hamburguerRef) {
+        hamburguerRef.classList.toggle('active');
+        this.show_listFull = hamburguerRef.classList.contains('active');
+      } else {
+        console.warn('Referência hamburguerRef não encontrada');
+      }
     },
-    data(): Data {
-        return {
-            data_path_NavBar: [
-                {id: 1, text_content: 'Inicio', path: 'http://localhost:3000/#header', icon: 'home-outline'},
-                {id: 2, text_content: 'Habilidades', path: 'http://localhost:3000/#container_skills', icon: 'hammer-outline'},
-                {id: 3, text_content: 'Projetos', path: 'http://localhost:3000/#container_project', icon: 'bag-check-outline'},
-                {id: 4, text_content: 'Contato', path: '', icon: 'call-outline'}
-            ],
-            show_listFull: false,
-            
-        }
+    open_listFull(ListFull_element: HTMLElement): void {
+      ListFull_element.classList.add('active');
     },
-    methods: {
-        toggle_btn() {
-            
-            const hamburguerRef = this.$refs.hamburguerRef as HTMLElement
-
-            if(hamburguerRef) {
-                hamburguerRef.classList.toggle("active")
-
-                if(hamburguerRef.classList.contains('active')) {
-                    this.show_listFull = true
-                } else {
-                    this.show_listFull = false
-                }
-            }
-        },
-        open_listFull(ListFull_element: HTMLElement): void {
-            ListFull_element.classList.add('active')
-        },
-        pass_eventToggle_theme(): void {
-            this.$emit("pass_eventToggle_theme")
-        }
+    pass_eventToggle_theme(): void {
+      this.$emit("pass_eventToggle_theme");
     }
-})
+  }
+});
 </script>
+
 
 <template>
     

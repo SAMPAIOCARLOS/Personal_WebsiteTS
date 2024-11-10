@@ -1,61 +1,62 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-interface iconsSkills {
-    id: number | null,
-    nameIcon: string | null,
-    name: string | null,
+// Interface para os ícones das habilidades
+interface IconSkill {
+  id: number;
+  nameIcon: string;
+  name: string;
 }
 
 interface Data {
-    namesSkilss: string[],
-    data_iconsSkills: iconsSkills[],
-    highlightedIndex: HTMLElement | null
+  namesSkills: string[];
+  data_iconsSkills: IconSkill[];
+  highlightedIndex: number | null;
 }
 
 export default defineComponent({
-    name: 'Skills',
-    data(): Data {
-        return {
-            namesSkilss: ['HTML', 'CSS', 'JAVASCRIPT', 'VUE.JS', 'GIT', 'GITHUB', 'FIGMA'],
-            data_iconsSkills: [
-                { id: 1, nameIcon: 'logo-html5', name: 'HTML' },
-                { id: 2, nameIcon: 'logo-css3', name: 'CSS' },
-                { id: 3, nameIcon: 'logo-javascript', name: 'JAVASCRIPT' },
-                { id: 4, nameIcon: 'logo-vue', name: 'VUE' },
-                { id: 5, nameIcon: 'git-branch-outline', name: 'GIT' },
-                { id: 6, nameIcon: 'logo-github', name: 'GITHUB' },
-                { id: 7, nameIcon: 'logo-figma', name: 'FIGMA' }
-            ],
-            highlightedIndex: null
-        }
+  name: 'Skills',
+  data(): Data {
+    return {
+      namesSkills: ['HTML', 'CSS', 'JAVASCRIPT', 'VUE.JS', 'GIT', 'GITHUB', 'FIGMA'],
+      data_iconsSkills: [
+        { id: 1, nameIcon: 'logo-html5', name: 'HTML' },
+        { id: 2, nameIcon: 'logo-css3', name: 'CSS' },
+        { id: 3, nameIcon: 'logo-javascript', name: 'JAVASCRIPT' },
+        { id: 4, nameIcon: 'logo-vue', name: 'VUE' },
+        { id: 5, nameIcon: 'git-branch-outline', name: 'GIT' },
+        { id: 6, nameIcon: 'logo-github', name: 'GITHUB' },
+        { id: 7, nameIcon: 'logo-figma', name: 'FIGMA' }
+      ],
+      highlightedIndex: null
+    };
+  },
+  methods: {
+    // Método para destacar um índice
+    highlight(index: number): void {
+      this.highlightedIndex = index;
     },
-    methods: {
-        highlight(index: number): void {
-            this.highlightedIndex = index
-        },
-        removehighlight(): void {
-            this.highlightedIndex = null
-        },
-        getHighlightClass(index: number): string {
-            if (this.highlightedIndex === index) {
-                switch(index) {
-                    case 0: return 'highlighted_html';
-                    case 1: return 'highlighted_css';
-                    case 2: return 'highlighted_js';
-                    case 3: return 'highlighted_vue';
-                    case 4: return 'highlighted_git';
-                    case 5: return 'highlighted_github';
-                    case 6: return 'highlighted_figma';
-                    default: return '';
-                }
-            }
-            return '';
-        }
+    // Método para remover o destaque
+    removehighlight(): void {
+      this.highlightedIndex = null;
     },
-
-})
+    // Método para obter a classe de destaque
+    getHighlightClass(index: number): string {
+      const highlightClasses = [
+        'highlighted_html',
+        'highlighted_css',
+        'highlighted_js',
+        'highlighted_vue',
+        'highlighted_git',
+        'highlighted_github',
+        'highlighted_figma'
+      ];
+      return this.highlightedIndex === index ? highlightClasses[index] || '' : '';
+    }
+  }
+});
 </script>
+
 
 <template>
     <div id="container_skills">

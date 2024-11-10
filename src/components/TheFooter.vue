@@ -1,51 +1,63 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
+// Interface para itens da lista
 interface ItensList {
-    name: string,
-    path: string
+  name: string;
+  path: string;
 }
 
-interface lists_footer {
-    title: string,
-    itensList: ItensList[] | string[]
+// Interface para as listas de rodapé
+interface ListsFooter {
+  title: string;
+  itensList: ItensList[];
 }
-
 
 interface Data {
-    data_lists_footer: lists_footer[][]
+  data_lists_footer: ListsFooter[][];
 }
+
 export default defineComponent({
-    name: 'TheFooter',
-    data(): Data {
-        return {
-            data_lists_footer: [
-                [
-                    { title: 'Links contato', itensList: [
-                        { name: 'Inicio', path: 'http://localhost:3000/#header' },
-                        { name: 'Habilidades', path: 'http://localhost:3000/#container_skills' },
-                        { name: 'Projetos', path: 'http://localhost:3000/#container_project' },
-                        { name: 'Contato', path: '' }
-                    ] }
-                ],
-                [
-                    { title: 'Links contato', itensList: [
-                        { name: 'sampaiocarlos957@gmail.com', path: '' },
-                        { name: '(99)99999-9999', path: '' }
-                    ] }
-                ],
-                [
-                    { title: 'Redes sociais', itensList: [
-                        { name: 'Instagram', path: 'https://www.instagram.com/cadusilvaasp/' },
-                        { name: 'Linkedin', path: 'https://www.linkedin.com/in/carlos-sampaio-a02651265/' },
-                        { name: 'Github', path: 'https://github.com/SAMPAIOCARLOS' }
-                    ] }
-                ]
+  name: 'TheFooter',
+  data(): Data {
+    return {
+      data_lists_footer: [
+        [
+          {
+            title: 'Links contato',
+            itensList: [
+              { name: 'Inicio', path: 'http://localhost:3000/#header' },
+              { name: 'Habilidades', path: 'http://localhost:3000/#container_skills' },
+              { name: 'Projetos', path: 'http://localhost:3000/#container_project' },
+              { name: 'Contato', path: '' }
             ]
-        }
-    }
-})
+          }
+        ],
+        [
+          {
+            title: 'Links contato',
+            itensList: [
+              { name: 'sampaiocarlos957@gmail.com', path: '' },
+              { name: '(99)99999-9999', path: '' }
+            ]
+          }
+        ],
+        [
+          {
+            title: 'Redes sociais',
+            itensList: [
+              { name: 'Instagram', path: 'https://www.instagram.com/cadusilvaasp/' },
+              { name: 'Linkedin', path: 'https://www.linkedin.com/in/carlos-sampaio-a02651265/' },
+              { name: 'Github', path: 'https://github.com/SAMPAIOCARLOS' }
+            ]
+          }
+        ]
+      ]
+    };
+  }
+});
 </script>
+
 
 <template>
     <footer>

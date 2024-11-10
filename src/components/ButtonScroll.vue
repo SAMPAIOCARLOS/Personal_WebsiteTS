@@ -1,14 +1,21 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
     name: 'ButtonScroll',
     props: {
-        show_iconScroll: { type: Boolean, required: true },
-        pathHref: { type: String, required: true }
+        show_iconScroll: {
+            type: Boolean as PropType<boolean>, // Tipagem explícita com PropType
+            required: true,
+        },
+        pathHref: {
+            type: String as PropType<string>, // Tipagem explícita com PropType
+            required: true,
+        }
     }
-})
+});
 </script>
+
 
 <template>
     <aside id="container_icons_scroll">

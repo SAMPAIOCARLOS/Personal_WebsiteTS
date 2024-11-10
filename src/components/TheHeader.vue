@@ -1,73 +1,78 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onBeforeUnmount } from 'vue';
 import NavBar from './NavBar.vue';
 import ButtonScroll from './ButtonScroll.vue';
-
 import Typed from 'typed.js';
 
-
-interface iconsHeaderType {
-    id: number,
-    path: String,
-    name: String
+interface IconHeaderType {
+  id: number;
+  path: string;
+  name: string;
 }
 
-interface Options {
-    strings: string[] | null
-    typeSpeed: number | null
-    backSpeed: number | null
-    cursorChar: string | null
-    backDelay: number | null
-    loop: boolean | null
+interface TypedOptions {
+  strings: string[];
+  typeSpeed: number;
+  backSpeed: number;
+  cursorChar: string;
+  backDelay: number;
+  loop: boolean;
 }
 
-interface Data{
-    data_icons_socialHeader: iconsHeaderType[],
-    array_names: (string | number)[] | null,
-    typed: Typed | null;
-    path_href: string
+interface Data {
+  data_icons_socialHeader: IconHeaderType[];
+  array_names: string[];
+  typed: Typed | null;
+  path_href: string;
 }
 
-    export default defineComponent({
-        name: 'TheHeader',
-        components: { NavBar, ButtonScroll },
-        data(): Data {
-            return {
-                data_icons_socialHeader: [
-                    { id: 1, path: 'https://www.linkedin.com/in/carlos-sampaio-a02651265/', name: 'logo-linkedin' },
-                    { id: 2, path: 'https://github.com/SAMPAIOCARLOS', name: 'logo-github' },
-                    { id: 3, path: 'https://mail.google.com/mail/u/1/?pli=1#inbox', name: 'mail-outline' }
-                ],
-                array_names: ['Desenvolvedor front-end', 'Front-end developer', 'Desenvolvedor front-end', 'Front-end developer'],
-                typed: null,
-                path_href: '#container_skills'
-            }
-        },
-        props: {
-            show_btn_theme: { type: Boolean, required: true },
-            show_logoNavBar: { type: Boolean, required: true },
-            show_iconScroll: { type: Boolean, required: true },
-        },
-        methods: {
-            pass_eventToggle_theme(): void {
-                this.$emit("pass_eventToggle_theme")
-            }
-        },
-        mounted() {
-            const options: Options  = {
-                strings: this.array_names,
-                typeSpeed: 80, //tempo para os caracteres serem escritos
-                backSpeed: 40, //tempo para os caracteres serem apagados
-                cursorChar: "|", //O simbolo que aparece no final
-                backDelay: 1000, //O tempo antes de apagar o texto
-                loop: true // Se o efeito deve repetir indefinidamente
-            };
+export default defineComponent({
+  name: 'TheHeader',
+  components: { NavBar, ButtonScroll },
+  data(): Data {
+    return {
+      data_icons_socialHeader: [
+        { id: 1, path: 'https://www.linkedin.com/in/carlos-sampaio-a02651265/', name: 'logo-linkedin' },
+        { id: 2, path: 'https://github.com/SAMPAIOCARLOS', name: 'logo-github' },
+        { id: 3, path: 'https://mail.google.com/mail/u/1/?pli=1#inbox', name: 'mail-outline' }
+      ],
+      array_names: ['Desenvolvedor front-end', 'Front-end developer', 'Desenvolvedor front-end', 'Front-end developer'],
+      typed: null,
+      path_href: '#container_skills'
+    };
+  },
+  props: {
+    show_btn_theme: { type: Boolean, required: true },
+    show_logoNavBar: { type: Boolean, required: true },
+    show_iconScroll: { type: Boolean, required: true }
+  },
+  methods: {
+    pass_eventToggle_theme(): void {
+      this.$emit('pass_eventToggle_theme');
+    }
+  },
+  mounted() {
+    const options: TypedOptions = {
+      strings: this.array_names,
+      typeSpeed: 80,
+      backSpeed: 40,
+      cursorChar: '|',
+      backDelay: 1000,
+      loop: true
+    };
 
-            // Instanciando o Typed.js
-            this.typed = new Typed('.typed-element', options);
-        }
-    })
+    // Instanciando o Typed.js
+    this.typed = new Typed('.typed-element', options);
+  },
+  beforeUnmount() {
+    // Limpeza da instância de Typed.js
+    if (this.typed) {
+      this.typed.destroy();
+    }
+  }
+});
 </script>
+
 
 <template>
     

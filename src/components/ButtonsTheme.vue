@@ -1,20 +1,22 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 
-    export default defineComponent({
-        name: 'ButtonsTheme',
-        props: {
-            show_btn_theme: { type: Boolean, required: true }
-        },
-        methods: {
-            toggle_theme(): void {
-                this.$emit('toggleTheme')
-            }
+export default defineComponent({
+    name: 'ButtonsTheme',
+    props: {
+        show_btn_theme: {
+            type: Boolean as PropType<boolean>, // Tipagem explícita com PropType
+            required: true,
         }
-
-
-    })
+    },
+    methods: {
+        toggle_theme(): void {
+            this.$emit('toggleTheme');
+        }
+    }
+});
 </script>
+
 
 <template>
     <button v-if="!show_btn_theme" @click="toggle_theme">

@@ -4,67 +4,62 @@ import TheHeader from './components/TheHeader.vue';
 import TheMain from './components/TheMain.vue';
 import TheFooter from './components/TheFooter.vue';
 
-  interface Data {
-    BodyElement: HTMLElement | null;
-    show_btn_theme: boolean | null;
-    show_logoNavBar: boolean | null;
-    show_iconScroll: boolean | null;
-    theme: string | null;
-  }
+interface Data {
+  BodyElement: HTMLElement;
+  show_btn_theme: boolean;
+  show_logoNavBar: boolean;
+  show_iconScroll: boolean;
+  theme: string;
+}
 
-  export default defineComponent({
-    name: 'App',
-    components: { TheHeader, TheMain, TheFooter },
-    data(): Data {
-      return {
-        BodyElement: null,
-        show_btn_theme: null,
-        show_logoNavBar: null,
-        show_iconScroll: null,
-        theme: localStorage.getItem('theme')
-      }
-    },
-    mounted() {
-      this.BodyElement = document.body;
+export default defineComponent({
+  name: 'App',
+  components: { TheHeader, TheMain, TheFooter },
+  data(): Data {
+    return {
+      BodyElement: document.body,  // Definindo diretamente
+      show_btn_theme: false,  // Iniciado como false
+      show_logoNavBar: false, // Iniciado como false
+      show_iconScroll: false, // Iniciado como false
+      theme: localStorage.getItem('theme') || 'light',  // Valor padrão 'light'
+    };
+  },
+  mounted() {
+    if (this.theme === 'light') {
+      this.BodyElement.classList.add('theme_Light');
+      this.show_btn_theme = true;
+      this.show_logoNavBar = true;
+      this.show_iconScroll = true;
+    }
+  },
+  methods: {
+    toggle_theme() {
+      const isLight = this.BodyElement.classList.toggle("theme_Light");
 
-        if (this.theme === 'light') {
-          this.BodyElement.classList.add('theme_Light');
-          this.show_btn_theme = true;
-          this.show_logoNavBar = true;
-          this.show_iconScroll = true;
-        }
-    },
-    methods: {
-      toggle_theme() {
-
-        this.BodyElement?.classList.toggle("theme_Light");
-
-        if(this.BodyElement.classList.contains("theme_Light")) {
-          console.log("dark");
-          this.show_btn_theme = true;
-          this.show_logoNavBar = true;
-          this.show_iconScroll = true;
-
-          localStorage.setItem('theme', 'light');
-        } else {
-          console.log("light");
-          this.show_btn_theme = false;
-          this.show_logoNavBar = false;
-          this.show_iconScroll = false;
-          localStorage.setItem('theme', 'dark');
-        }
-      }
-    },
-    computed: {
-      showHeaderAndMain() {
-        // Defina quais rotas devem esconder o TheHeader e TheMain.
-        // Por exemplo, se estiver na rota de detalhes, não mostrar o header/main.
-        const hideOnRoutes = ['Details', 'Contact'] as string[]; // Nome da rota onde você não quer exibir os componentes
-        return !hideOnRoutes.includes(this.$route.name);
+      if (isLight) {
+        console.log("light");
+        this.show_btn_theme = true;
+        this.show_logoNavBar = true;
+        this.show_iconScroll = true;
+        localStorage.setItem('theme', 'light');
+      } else {
+        console.log("dark");
+        this.show_btn_theme = false;
+        this.show_logoNavBar = false;
+        this.show_iconScroll = false;
+        localStorage.setItem('theme', 'dark');
       }
     }
-  })
+  },
+  computed: {
+    showHeaderAndMain() {
+      const hideOnRoutes = ['Details', 'Contact'];
+      return !hideOnRoutes.includes(this.$route.name as string);
+    }
+  }
+});
 </script>
+
 
 <template>
   <TheHeader v-if="showHeaderAndMain" @pass_eventToggle_theme="toggle_theme" :show_btn_theme="show_btn_theme" :show_logoNavBar="show_logoNavBar" :show_iconScroll="show_iconScroll"/>

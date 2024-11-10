@@ -1,21 +1,23 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import CardsProject from './CardsProject.vue'
+import { defineComponent } from 'vue';
+import CardsProject from './CardsProject.vue';
 
+// Definição de interface para tipar corretamente os dados do componente.
 interface Data {
-    name_project: string;
+  name_project: string;
 }
 
 export default defineComponent({
-    name: 'Projects',
-    components: { CardsProject },
-    data(): Data {
-        return {
-            name_project: 'Projetos'
-        }
-    }
-})
+  name: 'Projects',
+  components: { CardsProject },
+  data(): Data {
+    return {
+      name_project: 'Projetos' // Nome do projeto para exibição
+    };
+  }
+});
 </script>
+
 
 <template>
     <div id="container_project">
