@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, onBeforeUnmount } from 'vue';
+import { defineComponent, onBeforeUnmount, PropType } from 'vue';
 import NavBar from './NavBar.vue';
 import ButtonScroll from './ButtonScroll.vue';
 import Typed from 'typed.js';
@@ -42,9 +42,9 @@ export default defineComponent({
     };
   },
   props: {
-    show_btn_theme: { type: Boolean, required: true },
-    show_logoNavBar: { type: Boolean, required: true },
-    show_iconScroll: { type: Boolean, required: true }
+    show_btn_theme: { type: Boolean as PropType<Boolean>, required: true },
+    show_logoNavBar: { type: Boolean as PropType<Boolean>, required: true },
+    show_iconScroll: { type: Boolean as PropType<Boolean>, required: true }
   },
   methods: {
     pass_eventToggle_theme(): void {

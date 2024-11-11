@@ -1,10 +1,10 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
     name: 'Form',
     props: {
-        dataCreateForm: { type: Array, required: true }
+        dataCreateForm: { type: Array as PropType<any[]>, required: true }
     }
 })
 </script>

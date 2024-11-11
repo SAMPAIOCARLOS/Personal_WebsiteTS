@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ref, defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import ButtonsTheme from './ButtonsTheme.vue';
 import ListNav from './ListNav.vue';
 
@@ -7,13 +7,8 @@ export default defineComponent({
     name: 'TheHeader',
     components: { ListNav, ButtonsTheme },
     props: {
-        data_path_NavBar: { type: Array, required: true },
-        show_btn_theme: { type: Boolean, required: true }
-    },
-    data() {
-        return {
-            // Não há necessidade de usar `ref` dentro de `data()`, é preferível usar diretamente no `setup()` ou em `mounted()`.
-        };
+        data_path_NavBar: { type: Array as PropType<any[]>, required: true },
+        show_btn_theme: { type: Boolean as PropType<Boolean>, required: true }
     },
     mounted() {
         // Verifique se o `list_full` está corretamente referenciado e se existe antes de emitir o evento.

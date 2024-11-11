@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 
 import NavBar from '../components/NavBar.vue'
 import TheFooter from '../components/TheFooter.vue'
@@ -48,9 +48,9 @@ export default defineComponent({
         }
     },
     props: {
-        show_btn_theme: { type: Boolean, required: true },
-        show_logoNavBar: { type: Boolean, required: true },
-        show_iconScroll: { type: Boolean, required: true },
+        show_btn_theme: { type: Boolean as PropType<Boolean>, required: true },
+        show_logoNavBar: { type: Boolean as PropType<Boolean>, required: true },
+        show_iconScroll: { type: Boolean as PropType<Boolean>, required: true },
     },
     methods: {
         pass_eventToggle_theme(): void {

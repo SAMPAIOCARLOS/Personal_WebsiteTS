@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import ButtonsTheme from './ButtonsTheme.vue';
 import ListNav from './ListNav.vue';
 import ListFull from './ListFull.vue';
@@ -20,8 +20,8 @@ export default defineComponent({
   name: 'NavBar',
   components: { ListNav, ButtonsTheme, ListFull },
   props: {
-    show_btn_theme: { type: Boolean, required: true },
-    show_logoNavBar: { type: Boolean, required: true }
+    show_btn_theme: { type: Boolean as PropType<Boolean>, required: true },
+    show_logoNavBar: { type: Boolean as PropType<Boolean>, required: true }
   },
   data(): Data {
     return {
