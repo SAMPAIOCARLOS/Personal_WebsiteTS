@@ -73,7 +73,7 @@ export default defineComponent({
                     <div id="box_namesSkills">
                         <h2 class="color_blue">hard skills</h2>
                         <ul id="list_namesSkills">
-                            <li v-for="(itemSkill, index) in namesSkilss" :key="index" @mouseover="highlight(index)" @mouseleave="removehighlight(index)">
+                            <li v-for="(itemSkill, index) in namesSkills" :key="index" @mouseover="highlight(index)" @mouseleave="removehighlight()">
                                 {{ itemSkill }}
                             </li>
                         </ul>
